@@ -4,14 +4,21 @@
         <title>Coq commands counter</title>
     </head>
     <body>
-        <textarea id="input" cols="60" rows="20"></textarea><br/>
+        <h1>Count commands used in a Coq script</h1>
+        <p>Copyright &copy; 2015 <a href="http://www.camilstaps.nl/">Camil Staps</a> - licensed under <a href="LICENSE">MIT</a>.</p>
+
+        <textarea id="input" cols="60" rows="20">Enter Coq script here</textarea><br/>
         <textarea id="output" cols="60" rows="2"></textarea>
 
         <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="coqCounter.js"></script>
         <script type="text/javascript">
         $(function(){
-            $('#input').coqCounter('#output');
+            $('#input')
+                .coqCounter('#output')
+                .focus(function(){
+                    $(this).val('');
+                });
         });
         </script>
     </body>
