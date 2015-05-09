@@ -25,7 +25,7 @@
 (function($){
     $.fn.coqCounter = function(output) {
         $(this).change(function(){
-            var regex = /(?:^|\n)([a-z][a-zA-Z_']*|LEM)/g;
+            var regex = /(?:^|\n)([a-z][a-zA-Z0-9_']*|LEM)/g;
             var value = $(this).val();
             var matches = [], i = 0;
 
